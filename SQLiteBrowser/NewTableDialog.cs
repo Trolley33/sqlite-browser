@@ -16,16 +16,49 @@ namespace SQLiteBrowser
 
             Build();
 
-            // Setup 'table' headers.
-            HBox newRow = new HBox
+            Label columnNameHeader = new Label()
             {
-                new Label() { Name = "ColumnName", Text = "Column Name"},
-                new Label() { Name = "Type", Text = "DataType"},
-                new Label() { Name = "Delete", Text = "Delete"}
+                Name = "ColumnNameHeader",
+                Text = "Name"
             };
-            column_table.NRows = 2;
+            Label dataTypeHeader = new Label()
+            {
+                Name = "DataTypeHeader",
+                Text = "Data Type"
+            };
 
-            column_table.Attach(
+            Label notNullHeader = new Label()
+            {
+                Name = "NNHeader",
+                Text = "Not Null?"
+            };
+
+            Label pkHeader = new Label()
+            {
+                Name = "PKHeader",
+                Text = "PK?"
+            };
+
+            Label uniqueHeader = new Label()
+            {
+                Name = "UniqueHeader",
+                Text = "Unique?"
+            };
+
+            Label defaultHeader = new Label()
+            {
+                Name = "DefaultHeader",
+                Text = "Default Value"
+            };
+
+            Label deleteHeader = new Label()
+            {
+                Name = "DeleteHeader",
+                Text = "Delete"
+            };
+
+            /*
+            column_column_table.Attach(
                     newRow,
                     0,
                     3,
@@ -36,12 +69,77 @@ namespace SQLiteBrowser
                     5,
                     5
                 );
+            */
 
-            newRow.Show();
-            foreach (var child in newRow.Children)
-            {
-                child.Show();
-            }
+            // Add column name entry.
+            column_table.Attach(
+                columnNameHeader,
+                0, 1,
+                0, 1,
+                Gtk.AttachOptions.Fill | Gtk.AttachOptions.Expand,
+                Gtk.AttachOptions.Fill,
+                5,
+                5
+                );
+            // Add data type dropdown.
+            column_table.Attach(
+                dataTypeHeader,
+                1, 2,
+                0, 1,
+                Gtk.AttachOptions.Fill | Gtk.AttachOptions.Expand,
+                Gtk.AttachOptions.Fill,
+                5,
+                5
+                );
+
+            column_table.Attach(
+                notNullHeader,
+                2, 3,
+                0, 1,
+                Gtk.AttachOptions.Fill | Gtk.AttachOptions.Expand,
+                Gtk.AttachOptions.Fill,
+                5,
+                5
+                );
+
+            column_table.Attach(
+                pkHeader,
+                3, 4,
+                0, 1,
+                Gtk.AttachOptions.Fill | Gtk.AttachOptions.Expand,
+                Gtk.AttachOptions.Fill,
+                5,
+                5
+                );
+
+
+            column_table.Attach(
+                uniqueHeader,
+                4, 5,
+                0, 1,
+                Gtk.AttachOptions.Fill | Gtk.AttachOptions.Expand,
+                Gtk.AttachOptions.Fill,
+                5,
+                5
+                );
+
+            // Add column name entry.
+            column_table.Attach(
+                defaultHeader,
+                5, 6,
+                0, 1,
+                Gtk.AttachOptions.Fill | Gtk.AttachOptions.Expand,
+                Gtk.AttachOptions.Fill,
+                5,
+                5
+                );
+
+            columnNameHeader.Show();
+            dataTypeHeader.Show();
+            notNullHeader.Show();
+            pkHeader.Show();
+            uniqueHeader.Show();
+            defaultHeader.Show();
 
         }
 

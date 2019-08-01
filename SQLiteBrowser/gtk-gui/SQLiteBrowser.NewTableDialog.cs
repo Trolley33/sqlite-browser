@@ -30,6 +30,9 @@ namespace SQLiteBrowser
 			this.Title = global::Mono.Unix.Catalog.GetString("Create New Table");
 			this.WindowPosition = ((global::Gtk.WindowPosition)(4));
 			this.Modal = true;
+			this.DefaultWidth = 750;
+			this.DefaultHeight = 400;
+			this.DestroyWithParent = true;
 			// Internal child SQLiteBrowser.NewTableDialog.VBox
 			global::Gtk.VBox w1 = this.VBox;
 			w1.Name = "root_vbox";
@@ -134,8 +137,6 @@ namespace SQLiteBrowser
 			{
 				this.Child.ShowAll();
 			}
-			this.DefaultWidth = 400;
-			this.DefaultHeight = 300;
 			this.Show();
 			this.add_column.Clicked += new global::System.EventHandler(this.AddColumnRow);
 			this.buttonOk.Clicked += new global::System.EventHandler(this.CreateClicked);

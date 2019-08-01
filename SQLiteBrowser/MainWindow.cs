@@ -95,7 +95,6 @@ public partial class MainWindow : Gtk.Window
      */
     private bool SQLiteConnect(String path)
     {
-        Console.WriteLine($"Data Source={path};Version=3;");
         if (DBConnection != null) DBConnection.Close();
 
         DBConnection = new SqliteConnection($"Data Source={path};Version=3;");

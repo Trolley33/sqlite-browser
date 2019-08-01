@@ -91,21 +91,8 @@ namespace SQLiteBrowser
 
         protected void AddColumnRow(object sender, EventArgs e)
         {
-            ColumnRow row = new ColumnRow();
-
-            column_table.Attach(
-                row,
-                0,
-                3,
-                column_table.NRows,
-                column_table.NRows+1,
-                Gtk.AttachOptions.Fill | Gtk.AttachOptions.Expand,
-                Gtk.AttachOptions.Fill,
-                5,
-                5
-            );
-            row.Show();
-
+            ColumnUI column = new ColumnUI();
+            column.AddTo(column_table, column_table.NRows);
         }
     }
 }

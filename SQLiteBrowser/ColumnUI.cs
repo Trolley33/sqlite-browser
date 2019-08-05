@@ -46,69 +46,26 @@ namespace SQLiteBrowser
         public void AddTo(Table table, uint row)
         {
             // Add column name entry.
-            table.Attach(
-                this.columnNameEntry,
-                0,1,
-                row,row+1,
-                Gtk.AttachOptions.Fill | Gtk.AttachOptions.Expand,
-                Gtk.AttachOptions.Fill,
-                padding,padding
-                );
-            // Add data type dropdown.
-            table.Attach(
-                this.dataTypeCombo,
-                1,2,
-                row,row + 1,
-                Gtk.AttachOptions.Fill | Gtk.AttachOptions.Expand,
-                Gtk.AttachOptions.Fill,
-                padding,padding
-                );
+            PlaceWidgetAt(columnNameEntry, table, 0, 1);
+            PlaceWidgetAt(dataTypeCombo, table, 1, 1);
+            PlaceWidgetAt(notNullCheckbox, table, 2, 1);
+            PlaceWidgetAt(primaryKeyCheckbox, table, 3, 1);
+            PlaceWidgetAt(uniqueCheckbox, table, 4, 1);
+            PlaceWidgetAt(defaultEntry, table, 5, 1);
+        }
 
-            table.Attach(
-                this.notNullCheckbox,
-                2,3,
-                row,row + 1,
-                Gtk.AttachOptions.Fill | Gtk.AttachOptions.Expand,
+        private void PlaceWidgetAt(Widget w, Table t, uint column, uint row)
+        {
+            t.Attach(
+                w,
+                column, column+1,
+                row, row+1,
                 Gtk.AttachOptions.Fill,
-                padding,padding
+                Gtk.AttachOptions.Fill,
+                padding, padding
                 );
 
-            table.Attach(
-                this.primaryKeyCheckbox,
-                3,4,
-                row,row + 1,
-                Gtk.AttachOptions.Fill | Gtk.AttachOptions.Expand,
-                Gtk.AttachOptions.Fill,
-                padding,padding
-                );
-
-
-            table.Attach(
-                this.uniqueCheckbox,
-                4,5,
-                row,row + 1,
-                Gtk.AttachOptions.Fill | Gtk.AttachOptions.Expand,
-                Gtk.AttachOptions.Fill,
-                padding,padding
-                );
-
-            // Add column name entry.
-            table.Attach(
-                this.defaultEntry,
-                5,6,
-                row,row + 1,
-                Gtk.AttachOptions.Fill | Gtk.AttachOptions.Expand,
-                Gtk.AttachOptions.Fill,
-                padding,padding
-                );
-
-            this.columnNameEntry.Show();
-            this.dataTypeCombo.Show();
-            this.notNullCheckbox.Show();
-            this.primaryKeyCheckbox.Show();
-            this.uniqueCheckbox.Show();
-            this.defaultEntry.Show();
-
+            w.Show();
         }
     }
 }

@@ -57,20 +57,6 @@ namespace SQLiteBrowser
                 Text = "Delete"
             };
 
-            /*
-            column_column_table.Attach(
-                    newRow,
-                    0,
-                    3,
-                    0,
-                    1,
-                    Gtk.AttachOptions.Fill | Gtk.AttachOptions.Expand,
-                    Gtk.AttachOptions.Fill,
-                    5,
-                    5
-                );
-            */
-
             // Add column name entry.
             column_table.Attach(
                 columnNameHeader,
